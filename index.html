@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="sq" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blej atletet tua te preferuara!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: New Time Roman;
+            background-color: #7689de;
+        }
+
+        p {
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 200px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            transition: all 0.5s ease;
+            aspect-ratio: 1/1;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #7689de;
+            border: 1px solid #abb5c5;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #a9dce3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #7689de;
+        }
+
+        .active {
+            background-color: #a9dce3;
+            color: #7689de;
+        }
+
+        .kerko-filtro {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 500px;
+            background-color: #7689de;
+            align-content: center;
+        }
+
+        .kerko-filtro .filtro {
+            margin: 20px;
+        }
+
+        .filtro {
+            margin-top: 25px;
+        }
+
+        h1 {
+            font-size: 25px;
+            line-height: 2;
+            text-align: center;
+        }
+
+        main {
+            background-color: #7689de;
+            padding: 25px 0;
+        }
+
+        section {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #nrav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 25px));
+            column-gap: 20px;
+            grid-row-gap: 15px;
+            padding: 40px;
+        }
+
+        header {
+            background-color: #7689de;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 35px;
+            line-height: 2;
+        }
+
+        form input {
+            width: 400px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 20px;
+            border-bottom: 2px solid #abb5c5;
+            margin-bottom: 15px;
+            color: #7689de;
+        }
+
+        .btn {
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            justify-content: center;
+            background-color: #abb5c5;
+            padding: 10px;
+            margin: 3px;
+            border-radius: 3px;
+            transition: .4s ease;
+        }
+
+        .btn:hover {
+            transition: .5s ease;
+            background-color: #a9dce3;
+            color: #7689de;
+        }
+
+        .atlete {
+            border: 3px solid #abb5c5;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        .atlete-detaje {
+            text-align-last: center;
+            padding: 5px 5px 5px 5px;
+            padding-bottom: 10px;
+            background-color: #7eabec;
+            border-radius: 5px;
+        }
+
+        img:hover {
+            transform: all .5s ease;
+            transform: scale(1.05);
+        }
+
+        .atlete-detaje h2 {
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .atlete-detaje p {
+            font-size: 15px;
+            padding-bottom: 10px;
+            color: #a9dce3;
+            font-weight: 600;
+        }
+
+        .atlete-detaje p span {
+            text-decoration: line-through;
+            color: darkred;
+            font-weight: normal;
+        }
+
+        .atlete-detaje a {
+            font-size: 17px;
+            text-decoration: none;
+            background-color: #abb5c5;
+            color: #7689de;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        .atlete-detaje a:hover {
+            background-color: #7689de;
+            color: #abb5c5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="index.html">Dyqani</a></li>
+        <li><a href="kalkulatori.html">Kalkulator</a></li>
+        <li><a href="koha.html">Koha</a></li>
+    </ul>
+    <header>
+        <div class="kerko-filtro">
+            <div class="kerko">
+                <form action="#" onsubmit="return false">
+                    <input type="text" id="search" placeholder="Kerko atletet tua te preferuara!">
+                </form>
+            </div>
+
+            <div class="filtro">
+                <a href="#" id="active" class="btn" data-filter="atlet">Atlete</a>
+                <a href="#" class="btn" data-filter="nike">Nike</a>
+                <a href="#" class="btn" data-filter="reebok">Reebok</a>
+                <a href="#" class="btn" data-filter="adidas">Adidas</a>
+                <a href="#" class="btn" data-filter="vans">Vans</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="atlete-ndryshme">
+            <section class="atletet" id="nrav">
+
+                <div class="atlete nike">
+                    <img src="img/nikeairforce.png">
+                    <div class="atlete-detaje">
+                        <h2 id="nike">Nike</h2>
+                        <p><span>103.99€</span>84.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete nike">
+                    <img src="img/nikeairjordan.png">
+                    <div class="atlete-detaje">
+                        <h2>Nike Air Jordan</h2>
+                        <p><span>89.99€</span>79.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete nike">
+                    <img src="img/nikeblazer.png">
+                    <div class="atlete-detaje">
+                        <h2>Nike Blazer</h2>
+                        <p><span>54.99€</span>41.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete reebok">
+                    <img src="img/reebokclassicleather.png">
+                    <div class="atlete-detaje">
+                        <h2>Reebok Classic Leather</h2>
+                        <p><span>79.99€</span>49.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete reebok">
+                    <img src="img/reebokclubcrevenge.png">
+                    <div class="atlete-detaje">
+                        <h2>Reebok Club Revenge</h2>
+                        <p><span>99.99€</span>79.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete reebok">
+                    <img src="img/reebokfreestyle.png">
+                    <div class="atlete-detaje">
+                        <h2>Reebok Freestyle</h2>
+                        <p><span>75.99€</span>59.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete reebok">
+                    <img src="img/reebokworkoutplus.png">
+                    <div class="atlete-detaje">
+                        <h2>Reebok Workout Plus</h2>
+                        <p><span>59.99€</span>49.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete reebok">
+                    <img src="img/reebokzigkinetica.png">
+                    <div class="atlete-detaje">
+                        <h2>Reebok Zig Kinetica</h2>
+                        <p><span>33.99€</span>19.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasforesthills.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Forest Hill</h2>
+                        <p><span>99.99€</span>79.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasgazelle.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Gazelle</h2>
+                        <p><span>39.99€</span>29.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasitalia.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Italia</h2>
+                        <p><span>75.99€</span>59.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasnmd.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas NMD</h2>
+                        <p><span>59.99€</span>49.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasstansmith.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Stan Smith</h2>
+                        <p><span>123.99€</span>99.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidassuperstar.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Super Star</h2>
+                        <p><span>29.99€</span>19.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete adidas">
+                    <img src="img/adidasultraboost.png">
+                    <div class="atlete-detaje">
+                        <h2>Adidas Ultra Boost</h2>
+                        <p><span>39.99€</span>29.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete vans">
+                    <img src="img/vansslipon.png">
+                    <div class="atlete-detaje">
+                        <h2>Vans Slip-on</h2>
+                        <p><span>45.99€</span>39.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete vans">
+                    <img src="img/vansski8hi.png">
+                    <div class="atlete-detaje">
+                        <h2>Vans Ski-8 Hi</h2>
+                        <p><span>59.99€</span>49.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete vans">
+                    <img src="img/vansskatewayvee.png">
+                    <div class="atlete-detaje">
+                        <h2>Vans Skate Wayvee</h2>
+                        <p><span>37.99€</span>29.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete vans">
+                    <img src="img/vansrowan.png">
+                    <div class="atlete-detaje">
+                        <h2>Vans Rowan</h2>
+                        <p><span>57.99€</span>39.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+                <div class="atlete vans">
+                    <img id="image" src="img/vansskatewayvee.png">
+                    <div class="atlete-detaje">
+                        <h2>Vans Old Skool</h2>
+                        <p id="cmimi"><span>67.99€</span>42.99€</p>
+                        <a href="#">Bleje!</a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+    <script>
+        const butoni = document.querySelectorAll(".btn");
+        const shoeshop = document.querySelectorAll(".atlete");
+        for (i = 0; i < butoni.length; i++) {
+            butoni[i].addEventListener("click", (e) => {
+                e.preventDefault();
+
+                const filter = e.target.dataset.filter;
+                console.log(filter);
+
+                shoeshop.forEach((product) => {
+                    if (filter === "atlet") {
+                        product.style.display = "block";
+                    } else {
+                        if (product.classList.contains(filter)) {
+                            product.style.display = "block";
+                        } else {
+                            product.style.display = "none";
+                        }
+                    }
+                });
+            });
+        };
+
+        const search = document.getElementById("search");
+        const tedhenateatleteve = document.querySelectorAll(".atlete-detaje h2");
+
+        search.addEventListener("keyup", filtroproduktet);
+
+        function filtroproduktet(e) {
+            const text = e.target.value.toLowerCase();
+            tedhenateatleteve.forEach(function(product) {
+                const item = product.firstChild.textContent;
+                if (item.toLowerCase().indexOf(text) != -1) {
+                    product.parentElement.parentElement.style.display = "block"
+                } else {
+                    product.parentElement.parentElement.style.display = "none"
+                };
+            });
+        };
+        /*Ndryshimi i HTML dhe CSS permes JavaScript*/
+        const element = document.getElementById("nike");
+        element.innerHTML = "Nike Air Force";
+        document.getElementById("cmimi").innerHTML = "57.99€";
+        document.getElementById("image").src = "img/vansoldskool.png";
+
+        document.getElementById("active").style.color = "#7689de";
+        document.getElementById("active").style.backgroundColor = "#a9dce3";
+
+        document.write(Date());
+
+    </script>
+
+</body>
+
+</html>

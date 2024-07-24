@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kalkulator</title>
+    <style>
+        body {
+            background-color: #7689de;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #7689de;
+            border: 1px solid #abb5c5;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #a9dce3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #7689de;
+        }
+
+        .active {
+            background-color: #a9dce3;
+            color: #7689de;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid #abb5c5;
+        }
+
+        td,
+        h1 {
+            color: #a9dce3;
+        }
+
+        h1 {
+            font-size: 100px;
+            margin-bottom: 0px;
+        }
+
+        td {
+            font-size: 50px;
+            text-align: left;
+        }
+
+        td:hover {
+            color: #7689de;
+        }
+
+        tr:hover {
+            background-color: #abb5c5;
+        }
+
+        td input {
+            width: 150px;
+            height: 75px;
+            font-size: 45px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #a9dce3;
+            color: #000100;
+            border: 1px solid #DDA520;
+            border-radius: 5px;
+            width: 105px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #000100;
+            color: #a9dce3;
+            box-shadow: 0 3px 4px 0 #a9dce3;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Dyqani</a></li>
+        <li><a class="active" href="kalkulatori.html">Kalkulator</a></li>
+        <li><a href="koha.html">Koha</a></li>
+    </ul>
+    <center>
+        <h1>Kalkulator i thjeshtë</h1>
+        <h2 id="hdy">Kalkulator që bënë mbledhje,zbritje,shumëzim dhe pjesëtim!</h2>
+        <table>
+            <tr>
+                <td>Numri i parë:</td>
+                <td><input type="text" id="nr1" maxlength="5"></td>
+            </tr>
+            <tr>
+                <td>Operatori:</td>
+                <td><input type="text" id="opr" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td>Numri i dytë:</td>
+                <td><input type="text" id="nr2" maxlength="5"></td>
+            </tr>
+
+            <tr>
+                <td>Rezultati:</td>
+                <td><input type="text" id="result" maxlength="10"></td>
+            </tr>
+        </table>
+        <button onclick="calc()">LLogartit !</button>
+    </center>
+    <script>
+        function calc() {
+            var nr1 = parseFloat(document.getElementById("nr1").value);
+            var nr2 = parseFloat(document.getElementById("nr2").value);
+            var opr = (document.getElementById("opr").value);
+
+            switch (opr) {
+                case "+":
+                    document.getElementById("result").value = nr1 + nr2;
+                    break;
+                case "-":
+                    document.getElementById("result").value = nr1 - nr2;
+                    break;
+                case "*":
+                    document.getElementById("result").value = nr1 * nr2;
+                    break;
+                case "/":
+                    document.getElementById("result").value = nr1 / nr2;
+                    break;
+                default:
+                    alert("Operatori i vendosur nuk eshte valid");
+                    break;
+            }
+        }
+        document.getElementById("hdy").style.color = "#a9dce3";
+        document.getElementById("hdy").style.fontSize = "25px";
+
+    </script>
+</body>
+
+</html>
